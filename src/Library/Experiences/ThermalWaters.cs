@@ -1,7 +1,7 @@
 using System;
 namespace Library
 {
-    class ThermalWaters : Experience
+    public class ThermalWaters : Experience
     {
         public ThermalWaters(int points, int coins, int travelersLimit) : base(points, coins, travelersLimit)
         {
@@ -10,15 +10,7 @@ namespace Library
 
         override public void DoExperience(Traveler traveler)
         {
-            try
-            {
-                this.IsTravelerAdded(traveler);
-                traveler.Points += this.Points;
-            }
-            catch (System.Exception e)
-            {
-                throw e;
-            }
+            traveler.Points += this.Points;
         }
     }
 }

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 namespace Library
 {
-    class Station
+    public class Station
     {
         public Experience Exp {get; private set;}
         public List<Traveler> Travelers {get; private set;}
@@ -12,17 +12,36 @@ namespace Library
             this.Travelers = new List<Traveler>();
             this.Type = type;
         }
-        public void addExperience(Experience exp)
+        public void AddExperience(Experience exp)
         {
             this.Exp = exp;
         }
 
-        public void addTraveler(Traveler trav)
+        public void AddTraveler(Traveler trav)
         {
-            this.Travelers.Add(trav);
+            if( (int)this.Type != 1)
+            {
+                this.Travelers.Add(trav);
+            }
+            else
+            {
+                if(this.Travelers.Count == this.Exp.TravelersLimit)
+                {
+                    throw new Exception("To many travelers in this experience.");
+                }
+                else
+                {
+                    this.Travelers.Add(trav);
+                }
+            }
         }
 
-        public void realizeExperience(Traveler trav)
+        public void RemoveTraveler(Traveler trav)
+        {
+            this.Travelers.Remove(trav);
+        }
+
+        public void RealizeExperience(Traveler trav)
         {
             this.Exp.DoExperience(trav);
         }

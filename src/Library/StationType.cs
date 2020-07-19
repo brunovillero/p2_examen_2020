@@ -1,4 +1,4 @@
-enum StationType
+public enum StationType
 {
     start,
     experience,

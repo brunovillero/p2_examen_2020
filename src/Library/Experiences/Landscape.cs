@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 namespace Library
 {
-    abstract class Landscape : Experience
+    public abstract class Landscape : Experience
     {
         public int BonusPoints {get; private set;}
         public List<Traveler> TravelersHistory {get; private set;}
@@ -15,16 +15,8 @@ namespace Library
 
         override public void DoExperience(Traveler traveler)
         {
-            try
-            {
-                this.IsTravelerAdded(traveler);
-                traveler.Points += this.CalculatePoints(traveler);
-                this.AddTravelerToHistory(traveler);
-            }
-            catch (System.Exception e)
-            {
-                throw e;
-            } 
+            traveler.Points += this.CalculatePoints(traveler);
+            this.AddTravelerToHistory(traveler);
         }
 
         public void AddTravelerToHistory(Traveler traveler)
