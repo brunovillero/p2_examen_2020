@@ -3,7 +3,7 @@ namespace Library
 {
     class Ocean : Landscape
     {
-        public Ocean(int points, int coins, int travelersLimit, int pointsMultiplier) : base(points, coins, travelersLimit, pointsMultiplier)
+        public Ocean(int points, int coins, int travelersLimit) : base(points, coins, travelersLimit, 2)
         {
 
         }

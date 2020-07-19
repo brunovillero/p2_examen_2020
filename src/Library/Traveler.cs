@@ -6,11 +6,12 @@ namespace Library
     {
         public int Points {get; set;}
         public int Coins {get;  set;}
-
-        public Traveler(int points, int coins)
+        public string Name {get; private set;}
+        public Traveler(string name)
         {
-            this.Points = points;
-            this.Coins = coins;
+            this.Points = 0;
+            this.Coins = 0;
+            this.Name = name;
         }
     }
 }

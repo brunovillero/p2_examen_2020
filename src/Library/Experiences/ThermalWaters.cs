@@ -10,7 +10,15 @@ namespace Library
 
         override public void DoExperience(Traveler traveler)
         {
-
+            try
+            {
+                this.IsTravelerAdded(traveler);
+                traveler.Points += this.Points;
+            }
+            catch (System.Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

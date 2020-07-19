@@ -4,12 +4,17 @@ namespace Library
 {
     class Station
     {
-        public List<Experience> Experiences {get; set;}
-        public List<Traveler> Travelers {get; set;}
-
+        public Experience Exp {get; private set;}
+        public List<Traveler> Travelers {get; private set;}
+        public StationType Type {get; private set;}
+        public Station(StationType type)
+        {
+            this.Travelers = new List<Traveler>();
+            this.Type = type;
+        }
         public void addExperience(Experience exp)
         {
-            this.Experiences.Add(exp);
+            this.Exp = exp;
         }
 
         public void addTraveler(Traveler trav)
@@ -17,9 +22,9 @@ namespace Library
             this.Travelers.Add(trav);
         }
 
-        public void realizeExperience(Experience exp, Traveler trav)
+        public void realizeExperience(Traveler trav)
         {
-            exp.DoExperience(trav);
+            this.Exp.DoExperience(trav);
         }
     }
 }
