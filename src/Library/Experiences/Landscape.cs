@@ -11,7 +11,10 @@ namespace Library
         // Uso el principio de substituion de liskov, cada objeto
         // del tipo Experience tiene una responsabilidad que no cambia
         // doExperience(), aun existiendo diferentes tipos
-        
+
+        // Patron Expert porque necesitaba saber cuantas veces el 
+        // viajero visito este tipo de Experiencia
+
         public int BonusPoints {get; private set;}
         public List<Traveler> TravelersHistory {get; private set;}
 

@@ -6,6 +6,9 @@ namespace Library
     {
         // Patron creator usado en esta clase, debido a que el juego 
         // utiliza de manera muy cercana las clases Station y Traveler
+
+        // Ademas del principio de responsabilidad unica, la logica del manejo
+        // del juego deberia ir aqui
         private List<Station> Stations {get; set;}
         private List<Traveler> Players {get; set;}
         public GameManager(List<Traveler> players)
