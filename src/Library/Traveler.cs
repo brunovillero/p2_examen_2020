@@ -4,6 +4,7 @@ namespace Library
 {
     public class Traveler
     {
+        // Patron Expert, Traveler es experto en su informacion
         public int Points {get; set;}
         public int Coins {get;  set;}
         public string Name {get; private set;}

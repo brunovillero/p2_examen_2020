@@ -4,6 +4,13 @@ namespace Library
 {
     public class Station
     {
+        // Composicion: defini station pensando en que esta compuesta por travelers
+        // y una Experiencia.
+
+        // Patron Expert
+        // Tiene la informacion necesaria para ejecutar las experiencias y controlar 
+        // a sus travelers. 
+
         public Experience Exp {get; private set;}
         public List<Traveler> Travelers {get; private set;}
         public StationType Type {get; private set;}

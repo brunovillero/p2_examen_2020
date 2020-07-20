@@ -4,6 +4,14 @@ namespace Library
 {
     public abstract class Landscape : Experience
     {
+        // Patron Polimorfismo existen varios tipos de Experience
+        // Pero todas pueden ser agrupadas y utilizadas sin necesidad de
+        // diferenciar el tipo
+
+        // Uso el principio de substituion de liskov, cada objeto
+        // del tipo Experience tiene una responsabilidad que no cambia
+        // doExperience(), aun existiendo diferentes tipos
+        
         public int BonusPoints {get; private set;}
         public List<Traveler> TravelersHistory {get; private set;}
 
